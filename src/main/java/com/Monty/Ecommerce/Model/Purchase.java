@@ -1,0 +1,55 @@
+package com.Monty.Ecommerce.Model;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Calendar;
+
+@Entity
+@Table(name = "purchase")
+@NoArgsConstructor
+@Data
+public class Purchase implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "purchase_id")
+    private String purchaseId;
+
+    @Column(name = "order_number")
+    private long orderNumber;
+
+    @Column(name = "order_date_placed")
+    private Calendar orderDatePlaced;
+
+    @Column(name = "transactionstatus")
+    private String transactionStatus;
+
+    @Column(name = "is_shipped")
+    private boolean isShipped;
+
+    @Column(name = "is_active")
+    private boolean isActive;
+
+    @Column(name = "date_created")
+    private Calendar dateCreated;
+
+    @Column(name = "date_updated")
+    private Calendar dateUpdated;
+
+    private String shipmentId;
+    private String vendorId;
+
+    public Purchase(long orderNumber, Calendar orderDatePlaced, String transactionStatus, boolean isShipped, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
+
+        this.orderNumber = orderNumber;
+        this.orderDatePlaced = orderDatePlaced;
+        this.transactionStatus = transactionStatus;
+        this.isShipped = isShipped;
+        this.isActive = isActive;
+        this.dateCreated = dateCreated;
+        this.dateUpdated = dateUpdated;
+    }
+}
