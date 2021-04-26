@@ -1,91 +1,44 @@
 package com.Monty.Ecommerce.Model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
 
 @Entity
-@Table(name = "Brand")
+@NoArgsConstructor
+@Data
+@Table(name = "brand")
 public class Brand implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Brand_id")
-    private long brand_id;
+    @Column(name = "brand_id")
+    private String brandId;
 
-    @Column(name = "Title")
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "PhotoURL")
+    @Column(name = "photo_url")
     private String photoURL;
 
-    @Column(name = "isActive")
+    @Column(name = "is_active")
     private boolean isActive;
 
-    @Column(name = "Date_Created")
-    private Date date_created;
+    @Column(name = "date_created")
+    private Calendar dateCreated;
 
-    @Column(name = "Date_Updated")
-    private Date date_updated;
+    @Column(name = "date_updated")
+    private Calendar dateUpdated;
 
-    public Brand(String title, String photoURL, boolean isActive, Date date_created, Date date_updated) {
+    public Brand(String title, String photoURL, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
         this.title = title;
         this.photoURL = photoURL;
         this.isActive = isActive;
-        this.date_created = date_created;
-        this.date_updated = date_updated;
+        this.dateCreated = dateCreated;
+        this.dateUpdated = dateUpdated;
     }
 
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getPhotoURL() {
-        return photoURL;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public Date getDate_created() {
-        return date_created;
-    }
-
-    public Date getDate_updated() {
-        return date_updated;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setPhotoURL(String photoURL) {
-        this.photoURL = photoURL;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
-    }
-
-    public void setDate_created(Date date_created) {
-        this.date_created = date_created;
-    }
-
-    public void setDate_updated(Date date_updated) {
-        this.date_updated = date_updated;
-    }
-
-    @Override
-    public String toString() {
-        return "Brand{" +
-                "Brand_id=" + brand_id +
-                ", title='" + title + '\'' +
-                ", photoURL='" + photoURL + '\'' +
-                ", isActive=" + isActive +
-                ", date_created=" + date_created +
-                ", date_updated=" + date_updated +
-                '}';
-    }
 }
