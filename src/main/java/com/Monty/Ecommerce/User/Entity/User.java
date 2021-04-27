@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.UUID;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_account")
 @NoArgsConstructor
 @Data
 public class User implements Serializable {

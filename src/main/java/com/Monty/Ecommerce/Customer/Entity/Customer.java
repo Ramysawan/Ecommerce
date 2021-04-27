@@ -56,5 +56,6 @@ public class Customer implements Serializable {
     }
 
     private String addressId;
+
     private String userId;
 }
