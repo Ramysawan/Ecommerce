@@ -1,4 +1,4 @@
-package com.Monty.Ecommerce.Model;
+package com.Monty.Ecommerce.Payment.Entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

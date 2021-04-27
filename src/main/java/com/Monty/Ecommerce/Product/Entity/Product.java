@@ -1,4 +1,4 @@
-package com.Monty.Ecommerce.Model;
+package com.Monty.Ecommerce.Product.Entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -57,8 +57,13 @@ public class Product implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
+
     private String categoryId;
+
+
     private String brandId;
+
+
     private String vendorId;
 
     public Product(String title, String description, String barcode, double price, double weight, long stock, String photoURL, double priceAfterDiscount, String availableSize, String availableColor, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {

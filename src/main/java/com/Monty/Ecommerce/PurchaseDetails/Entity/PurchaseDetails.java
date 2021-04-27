@@ -1,4 +1,4 @@
-package com.Monty.Ecommerce.Model;
+package com.Monty.Ecommerce.PurchaseDetails.Entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,15 +8,15 @@ import java.io.Serializable;
 import java.util.Calendar;
 
 @Entity
-@Table(name = "order_details")
+@Table(name = "purchase_details")
 @NoArgsConstructor
 @Data
-public class OrderDetails implements Serializable {
+public class PurchaseDetails implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "order_details_id")
-    private String orderDetailsId;
+    @Column(name = "purchase_details_id")
+    private String purchaseDetailsId;
 
     @Column(name = "price")
     private double price;
@@ -42,10 +42,10 @@ public class OrderDetails implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
-    private String orderId;
     private String productId;
+    private String purchaseId;
 
-    public OrderDetails(double price, long quantity, double discount, double tax, double total, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
+    public PurchaseDetails(double price, long quantity, double discount, double tax, double total, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 
         this.price = price;
         this.quantity = quantity;
@@ -55,6 +55,5 @@ public class OrderDetails implements Serializable {
         this.isActive = isActive;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;
-
     }
 }

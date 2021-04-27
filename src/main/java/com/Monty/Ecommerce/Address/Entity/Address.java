@@ -1,4 +1,4 @@
-package com.Monty.Ecommerce.Model;
+package com.Monty.Ecommerce.Address.Entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
