@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
@@ -16,7 +17,7 @@ public class Brand implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "brand_id")
-    private String brandId;
+    private UUID brandId;
 
     @Column(name = "title")
     private String title;

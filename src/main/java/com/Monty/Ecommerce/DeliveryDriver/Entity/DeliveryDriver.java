@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.UUID;
 
 @Entity
 @Table(name = "deliverydriver")
@@ -16,7 +17,7 @@ public class DeliveryDriver implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "deliverydriver_id")
-    private String deliveryDriverId;
+    private UUID deliveryDriverId;
 
     @Column(name = "driver_name")
     private String driverName;

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.UUID;
 
 @Entity
 @Table(name = "payment")
@@ -16,7 +17,7 @@ public class Payment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "payment_id")
-    private String paymentId;
+    private UUID paymentId;
 
     @Column(name = "payment_type")
     private String paymentType;

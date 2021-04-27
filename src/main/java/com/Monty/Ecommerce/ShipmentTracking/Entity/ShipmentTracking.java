@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.UUID;
 
 @Entity
 @Table(name = "shipment_tracking")
@@ -16,7 +17,7 @@ public class ShipmentTracking implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "shipment_tracking_id")
-    private String shipmentTrackingId;
+    private UUID shipmentTrackingId;
 
     @Column(name = "tracking_url")
     private String trackingURL;
