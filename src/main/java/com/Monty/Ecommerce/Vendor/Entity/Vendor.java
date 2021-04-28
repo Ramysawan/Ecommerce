@@ -1,6 +1,7 @@
 package com.Monty.Ecommerce.Vendor.Entity;
 
 import com.Monty.Ecommerce.Product.Entity.Product;
+import com.Monty.Ecommerce.User.Entity.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -34,7 +35,9 @@ public class Vendor implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
-    private String addressId;
+    @OneToOne
+    @JoinColumn(name = "vendor_id")
+    private User user;
 
     public Vendor(String vendorName, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 

@@ -1,5 +1,9 @@
 package com.Monty.Ecommerce.Shipment.Entity;
 
+import com.Monty.Ecommerce.DeliveryDriver.Entity.DeliveryDriver;
+import com.Monty.Ecommerce.Orders.Entity.Orders;
+import com.Monty.Ecommerce.ShipmentTracking.Entity.ShipmentTracking;
+import com.Monty.Ecommerce.User.Entity.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -61,8 +65,14 @@ public class Shipment implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
-    private String deliveryDriverId;
-    private String orderId;
+    @OneToOne
+    @JoinColumn(name = "delivery_driver_id")
+    private DeliveryDriver deliveryDriver;
+
+    @OneToOne
+    @JoinColumn(name = "shipment_tracking_id")
+    private ShipmentTracking shipmentTracking;
+
 
     public Shipment(Calendar promisedDeliveryDate, Calendar actualDeliveryDate, String shippingProvider, String shippingMethod, double shippingCost, String shippingStatus, boolean isSentToShippingProvider, boolean isDueAmountPaid, long shipmentNumber, Calendar dateTimeDriverLeft, Calendar dateTimeDriverReturned, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 

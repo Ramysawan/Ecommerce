@@ -1,5 +1,8 @@
 package com.Monty.Ecommerce.Orders.Entity;
 
+import com.Monty.Ecommerce.Customer.Entity.Customer;
+import com.Monty.Ecommerce.OrderDetails.Entity.OrderDetails;
+import com.Monty.Ecommerce.Shipment.Entity.Shipment;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -40,7 +43,18 @@ public class Orders implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
-    private String customerId;
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    @OneToOne
+    @JoinColumn(name = "shipment_id")
+    private Shipment shipment;
+
+    @OneToOne
+    @JoinColumn(name = "order_details_id")
+    private OrderDetails orderDetails;
+
 
     public Orders(long orderNumber, Calendar orderDatePlaced, String transactionStatus, boolean isShipped, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 

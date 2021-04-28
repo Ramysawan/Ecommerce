@@ -1,6 +1,5 @@
-package com.Monty.Ecommerce.Address.Entity;
+package com.Monty.Ecommerce.VendorAddress.Entity;
 
-import com.Monty.Ecommerce.Customer.Entity.Customer;
 import com.Monty.Ecommerce.Vendor.Entity.Vendor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,15 +10,15 @@ import java.util.Calendar;
 import java.util.UUID;
 
 @Entity
-@Table(name = "address")
+@Table(name = "vendoraddress")
 @NoArgsConstructor
 @Data
-public class Address implements Serializable {
+public class VendorAddress implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "address_id")
-    private UUID addressId;
+    @Column(name = "vendor_address_id")
+    private UUID vendoraddressId;
 
     @Column(name = "address1")
     private String address1;
@@ -55,11 +54,10 @@ public class Address implements Serializable {
     private Calendar dateUpdated;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
+    @JoinColumn(name = "vendor_id")
+    private Vendor vendor;
 
-    public Address(String address1, String address2, String address3, String country, String state, String city, long postalCode, String additionnalDescription, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
-
+    public VendorAddress(String address1, String address2, String address3, String country, String state, String city, long postalCode, String additionnalDescription, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
         this.address1 = address1;
         this.address2 = address2;
         this.address3 = address3;
@@ -71,6 +69,5 @@ public class Address implements Serializable {
         this.isActive = isActive;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;
-
     }
 }

@@ -1,5 +1,6 @@
 package com.Monty.Ecommerce.PurchaseDetails.Entity;
 
+import com.Monty.Ecommerce.Product.Entity.Product;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -43,8 +44,10 @@ public class PurchaseDetails implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
-    private String productId;
-    private String purchaseId;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product productId;
+
 
     public PurchaseDetails(double price, long quantity, double discount, double tax, double total, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 

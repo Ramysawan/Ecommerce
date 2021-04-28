@@ -1,5 +1,7 @@
 package com.Monty.Ecommerce.ShipmentTracking.Entity;
 
+
+import com.Monty.Ecommerce.Shipment.Entity.Shipment;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -52,7 +54,6 @@ public class ShipmentTracking implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
-    private String shipmentId;
 
     public ShipmentTracking(String trackingURL, Calendar shipmentDepartedDate, boolean isOrderReceivedByShipper, long trackingNumber, boolean isInTransit, boolean isOutForDelivery, boolean isDestinationReached, Calendar expectedArrivalDate, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 

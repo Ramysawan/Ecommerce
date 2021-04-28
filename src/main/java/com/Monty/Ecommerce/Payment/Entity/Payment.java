@@ -1,5 +1,7 @@
 package com.Monty.Ecommerce.Payment.Entity;
 
+import com.Monty.Ecommerce.Orders.Entity.Orders;
+import com.Monty.Ecommerce.User.Entity.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -37,7 +39,9 @@ public class Payment implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
-    private String orderId;
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    private Orders order;
 
     public Payment(String paymentType, double paymentAmount, boolean isPaid, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 

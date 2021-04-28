@@ -40,7 +40,13 @@ public class User implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
-    public User(String loginUsername, String loginPassword, String email, boolean isSuperAdmin, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
+    @Column(name = "is_customer")
+    private boolean isCustomer;
+
+    @Column(name = "is_vendor")
+    private boolean isVendor;
+
+    public User(String loginUsername, String loginPassword, String email, boolean isSuperAdmin, boolean isActive, Calendar dateCreated, Calendar dateUpdated, boolean isCustomer, boolean isVendor) {
 
         this.loginUsername = loginUsername;
         this.loginPassword = loginPassword;
@@ -49,6 +55,8 @@ public class User implements Serializable {
         this.isActive = isActive;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;
+        this.isCustomer = isCustomer;
+        this.isVendor = isVendor;
 
     }
 

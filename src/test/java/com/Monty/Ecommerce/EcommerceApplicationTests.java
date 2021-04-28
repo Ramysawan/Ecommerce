@@ -1,7 +1,11 @@
 package com.Monty.Ecommerce;
 
-import com.Monty.Ecommerce.Product.Entity.Product;
-import com.Monty.Ecommerce.Product.Repository.ProductRepository;
+import com.Monty.Ecommerce.Address.Entity.Address;
+import com.Monty.Ecommerce.Address.Repository.AddressRepository;
+import com.Monty.Ecommerce.Shipment.Entity.Shipment;
+import com.Monty.Ecommerce.Shipment.Repository.ShipmentRepository;
+import com.Monty.Ecommerce.Vendor.Entity.Vendor;
+import com.Monty.Ecommerce.Vendor.Repository.VendorRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,12 +14,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 class EcommerceApplicationTests {
 
 	@Autowired
-	ProductRepository productRepository;
+	VendorRepository vendorRepository;
+
+	@Autowired
+	ShipmentRepository shipmentRepository;
+
+	@Autowired
+	AddressRepository addressRepository;
 
 	@Test
 	void contextLoads() {
 
-		productRepository.save(new Product());
+		vendorRepository.save(new Vendor());
+		shipmentRepository.save(new Shipment());
+		addressRepository.save(new Address());
 
 	}
 

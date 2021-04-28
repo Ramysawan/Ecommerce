@@ -1,5 +1,6 @@
 package com.Monty.Ecommerce.Customer.Entity;
 
+import com.Monty.Ecommerce.User.Entity.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -43,6 +44,10 @@ public class Customer implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Customer(String firstName, String lastName, String phoneNumber, boolean agreeToMails, String notesAboutCustomer, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 
         this.firstName = firstName;
@@ -53,9 +58,8 @@ public class Customer implements Serializable {
         this.isActive = isActive;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;
+
     }
 
-    private String addressId;
 
-    private String userId;
 }
