@@ -54,12 +54,16 @@ public class Address implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
+    @Column(name = "title")
+    private String title;
+
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    public Address(String address1, String address2, String address3, String country, String state, String city, long postalCode, String additionnalDescription, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
+    public Address(String address1, String address2, String address3, String country, String state, String city, long postalCode, String additionnalDescription, boolean isActive, Calendar dateCreated, Calendar dateUpdated, String title) {
 
+        this.title = title;
         this.address1 = address1;
         this.address2 = address2;
         this.address3 = address3;
@@ -71,6 +75,7 @@ public class Address implements Serializable {
         this.isActive = isActive;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;
+
 
     }
 }
