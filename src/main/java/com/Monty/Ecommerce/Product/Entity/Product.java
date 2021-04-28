@@ -1,5 +1,8 @@
 package com.Monty.Ecommerce.Product.Entity;
 
+import com.Monty.Ecommerce.Brand.Entity.Brand;
+import com.Monty.Ecommerce.Category.Entity.Category;
+import com.Monty.Ecommerce.Vendor.Entity.Vendor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -58,14 +61,17 @@ public class Product implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
-    private String categoryId;
+    @ManyToOne
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
 
-
-    private String brandId;
-
-
-    private String vendorId;
+    @ManyToOne
+    @JoinColumn(name = "vendor_id")
+    private Vendor vendor;
 
     public Product(String title, String description, String barcode, double price, double weight, long stock, String photoURL, double priceAfterDiscount, String availableSize, String availableColor, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 

@@ -1,11 +1,14 @@
 package com.Monty.Ecommerce.Category.Entity;
 
+import com.Monty.Ecommerce.Product.Entity.Product;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -34,7 +37,10 @@ public class Category implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
-    private String subCategoryId;
+    @ManyToOne
+    @JoinColumn(name = "subcategory_id")
+    private Category subCategory;
+
 
     public Category(String title, String description, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
         this.title = title;
