@@ -1,14 +1,11 @@
 package com.Monty.Ecommerce.Category.Entity;
 
-import com.Monty.Ecommerce.Product.Entity.Product;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 import java.util.UUID;
 
 @Entity

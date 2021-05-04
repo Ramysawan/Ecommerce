@@ -43,6 +43,12 @@ public class Orders implements Serializable {
     @Column(name = "date_updated")
     private Calendar dateUpdated;
 
+    @Column(name = "channel_type")
+    private String channelType;
+
+    @Column(name = "is_cart")
+    private boolean isCart;
+
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
@@ -51,12 +57,9 @@ public class Orders implements Serializable {
     @JoinColumn(name = "shipment_id")
     private Shipment shipment;
 
-    @OneToOne
-    @JoinColumn(name = "order_details_id")
-    private OrderDetails orderDetails;
 
 
-    public Orders(long orderNumber, Calendar orderDatePlaced, String transactionStatus, boolean isShipped, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
+    public Orders(long orderNumber, Calendar orderDatePlaced, String transactionStatus, boolean isShipped, boolean isActive, Calendar dateCreated, Calendar dateUpdated, String channelType, boolean isCart) {
 
         this.orderNumber = orderNumber;
         this.orderDatePlaced = orderDatePlaced;
@@ -65,5 +68,7 @@ public class Orders implements Serializable {
         this.isActive = isActive;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;
+        this.channelType = channelType;
+        this.isCart = isCart;
     }
 }

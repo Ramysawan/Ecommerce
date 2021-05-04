@@ -32,9 +32,6 @@ public class Customer implements Serializable {
     @Column(name = "agree_to_mails")
     private boolean agreeToMails;
 
-    @Column(name = "notes_about_customer")
-    private String notesAboutCustomer;
-
     @Column(name = "is_active")
     private boolean isActive;
 
@@ -48,13 +45,12 @@ public class Customer implements Serializable {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Customer(String firstName, String lastName, String phoneNumber, boolean agreeToMails, String notesAboutCustomer, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
+    public Customer(String firstName, String lastName, String phoneNumber, boolean agreeToMails, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.agreeToMails = agreeToMails;
-        this.notesAboutCustomer = notesAboutCustomer;
         this.isActive = isActive;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;

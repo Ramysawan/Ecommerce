@@ -1,4 +1,4 @@
 package com.Monty.Ecommerce.DeliveryDriver.Service;
 
-public class DeliveryDriverService {
+public interface DeliveryDriverService {
 }

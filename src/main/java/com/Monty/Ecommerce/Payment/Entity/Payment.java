@@ -1,7 +1,6 @@
 package com.Monty.Ecommerce.Payment.Entity;
 
 import com.Monty.Ecommerce.Orders.Entity.Orders;
-import com.Monty.Ecommerce.User.Entity.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
