@@ -20,9 +20,6 @@ public class PurchaseDetails implements Serializable {
     @Column(name = "purchase_details_id")
     private UUID purchaseDetailsId;
 
-    @Column(name = "price")
-    private double price;
-
     @Column(name = "quantity")
     private long quantity;
 
@@ -49,9 +46,8 @@ public class PurchaseDetails implements Serializable {
     private Product productId;
 
 
-    public PurchaseDetails(double price, long quantity, double discount, double tax, double total, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
+    public PurchaseDetails(long quantity, double discount, double tax, double total, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 
-        this.price = price;
         this.quantity = quantity;
         this.discount = discount;
         this.tax = tax;

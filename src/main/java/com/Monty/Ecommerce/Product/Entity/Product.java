@@ -43,9 +43,6 @@ public class Product implements Serializable {
     @Column(name = "photo_url")
     private String photoURL;
 
-    @Column(name = "price_after_discount")
-    private double priceAfterDiscount;
-
     @Column(name = "available_size")
     private String availableSize;
 
@@ -73,7 +70,7 @@ public class Product implements Serializable {
     @JoinColumn(name = "vendor_id")
     private Vendor vendor;
 
-    public Product(String title, String description, String barcode, double price, double weight, long stock, String photoURL, double priceAfterDiscount, String availableSize, String availableColor, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
+    public Product(String title, String description, String barcode, double price, double weight, long stock, String photoURL,String availableSize, String availableColor, boolean isActive, Calendar dateCreated, Calendar dateUpdated) {
 
         this.title = title;
         this.description = description;
@@ -82,7 +79,6 @@ public class Product implements Serializable {
         this.weight = weight;
         this.stock = stock;
         this.photoURL = photoURL;
-        this.priceAfterDiscount = priceAfterDiscount;
         this.availableSize = availableSize;
         this.availableColor = availableColor;
         this.isActive = isActive;

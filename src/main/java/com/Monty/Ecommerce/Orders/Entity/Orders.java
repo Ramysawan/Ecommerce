@@ -58,7 +58,6 @@ public class Orders implements Serializable {
     private Shipment shipment;
 
 
-
     public Orders(long orderNumber, Calendar orderDatePlaced, String transactionStatus, boolean isShipped, boolean isActive, Calendar dateCreated, Calendar dateUpdated, String channelType, boolean isCart) {
 
         this.orderNumber = orderNumber;
